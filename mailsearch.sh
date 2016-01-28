@@ -84,6 +84,8 @@ echo -e "\nCleaning trash... JPG"
 sleep 1
 awk '!/webmaster/' MailsFinalList > temp && mv temp MailsFinalList
 sleep 1
+awk '!/postmaster/' MailsFinalList > temp && mv temp MailsFinalList
+sleep 1
 
 echo -e "\nDeleting temp files"
 sleep 1

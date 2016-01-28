@@ -87,11 +87,5 @@ sleep 1
 
 echo -e "\nDeleting temp files"
 sleep 1
-rm -f Mails
-rm -f Level2HTML
-rm -f UrlCleanListUniq
-rm -f UrlLevelTwo
-rm -f UrlLevelOne
-rm -f UrlCleanList
-rm -f search
+rm -f Mails Level2HTML UrlCleanListUniq UrlLevelTwo UrlLevelOne UrlCleanList search
 echo -e "\nDONE! Check you MailsFinalList file\n"

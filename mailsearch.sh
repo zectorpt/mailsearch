@@ -80,12 +80,10 @@ awk '!/jpeg/' MailsFinalList > temp && mv temp MailsFinalList
 echo -e "\nCleaning trash... JPG"
 sleep 1
 awk '!/JPG/' MailsFinalList > temp && mv temp MailsFinalList
-
-
+echo -e "\nCleaning trash... JPG"
 sleep 1
-
-#Cleaning numbers from flat file
-
+awk '!/webmaster/' MailsFinalList > temp && mv temp MailsFinalList
+sleep 1
 
 echo -e "\nDeleting temp files"
 sleep 1

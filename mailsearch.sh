@@ -65,15 +65,15 @@ sleep 1
 cat Mails|sort|uniq > MailsFinalList
 echo -e "\nCleaning trash... png"
 sleep 1
-sed "/^[^ ]png\png/d" MailsFinalList > MailsFinalList1
+awk '!/png/' MailsFinalList > temp && mv temp MailsFinalList
 echo -e "\nCleaning trash... jpg"
 sleep 1
-sed "/^[^ ]jpg\jpg/d" MailsFinalList1 > MailsFinalList2
+awk '!/png/' MailsFinalList > temp && mv temp MailsFinalList
 echo -e "\nCleaning trash... gif"
 sleep 1
-sed "/^[^ ]gif\gif/d" MailsFinalList2 > MailsFinalList
+awk '!/png/' MailsFinalList > temp && mv temp MailsFinalList
 sleep 1
-echo -e "\nDeletemp temp files"
+echo -e "\nDeleting temp files"
 sleep 1
 rm -f Mails
 rm -f Level2HTML
@@ -81,7 +81,5 @@ rm -f UrlCleanListUniq
 rm -f UrlLevelTwo
 rm -f UrlLevelOne
 rm -f UrlCleanList
-rm -f MailsFinalList1
-rm -f MailsFinalList2
 rm -f search
 echo -e "\nDONE! Check you MailsFinalList file\n"

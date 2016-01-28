@@ -4,7 +4,7 @@
 if [[ $(echo $*) ]]; then
     searchterm="$*"
 else
-    read -p "Pesquisa: " searchterm
+    read -p "Search: " searchterm
 fi
 
 #Adiciona + entre as palavras

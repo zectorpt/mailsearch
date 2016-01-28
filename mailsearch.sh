@@ -63,16 +63,22 @@ sleep 1
 
 #Export the file Mails sorted and uniq to MailsFinalList
 cat Mails|sort|uniq > MailsFinalList
+
+#Clean images from flat file
 echo -e "\nCleaning trash... png"
 sleep 1
 awk '!/png/' MailsFinalList > temp && mv temp MailsFinalList
 echo -e "\nCleaning trash... jpg"
 sleep 1
-awk '!/png/' MailsFinalList > temp && mv temp MailsFinalList
+awk '!/jpg/' MailsFinalList > temp && mv temp MailsFinalList
 echo -e "\nCleaning trash... gif"
 sleep 1
-awk '!/png/' MailsFinalList > temp && mv temp MailsFinalList
+awk '!/gif/' MailsFinalList > temp && mv temp MailsFinalList
 sleep 1
+
+#Cleaning numbers from flat file
+
+
 echo -e "\nDeleting temp files"
 sleep 1
 rm -f Mails

@@ -74,6 +74,14 @@ awk '!/jpg/' MailsFinalList > temp && mv temp MailsFinalList
 echo -e "\nCleaning trash... gif"
 sleep 1
 awk '!/gif/' MailsFinalList > temp && mv temp MailsFinalList
+echo -e "\nCleaning trash... jpeg"
+sleep 1
+awk '!/jpeg/' MailsFinalList > temp && mv temp MailsFinalList
+echo -e "\nCleaning trash... JPG"
+sleep 1
+awk '!/JPG/' MailsFinalList > temp && mv temp MailsFinalList
+
+
 sleep 1
 
 #Cleaning numbers from flat file

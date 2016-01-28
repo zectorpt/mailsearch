@@ -12,7 +12,7 @@ searchterm=$(echo $searchterm | sed -e 's/\ /+/g')
 echo -e '\nExtraindo URLs\n'
 lynx -dump "http://www.google.co.uk/search?q=$searchterm&num=9999" > search
 sleep 1
-cat search |awk '{print $1}'|grep www > UrlCleanList
+cat search | awk '{print $1}'|grep www > UrlCleanList
 rm -f search
 
 while read -r line

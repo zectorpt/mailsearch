@@ -58,14 +58,46 @@ awk '!/ssl/' UrlCleanListUniq > temp && mv temp UrlCleanListUniq
 #Implement counter 2
 numberoflines=$(cat UrlCleanListUniq|wc -l)
 
-#Get all html of the sites to Level2HTML
-echo -e "\nA exportar os $numberoflines resultados para Level2HTML"
+#Split UrlCleanListUniq in two files (xaa and xab)
+numberoflines=$(cat UrlCleanListUniq|wc -l)
+divisor=$(bc <<< $numberoflines/2)
+divisor=$(bc <<< $divisor+1)
+echo $divisor
+split -l $divisor UrlCleanListUniq
+
+#Generate process script
+cat <<EOF >> helper1.sh
+#!/bin/bash
+numberoflines=$(cat xaa|wc -l)
 while read -r line
   do
      curl -s "$line" >> Level2HTML
      echo "We need to process more $numberoflines lines"
      ((numberoflines--))
-  done < UrlCleanListUniq
+  done < xaa
+EOF
+cat <<EOF >> helper2.sh
+#!/bin/bash
+numberoflines=$(cat xab|wc -l)
+while read -r line
+  do
+     curl -s "$line" >> Level2HTML
+     echo "We need to process more $numberoflines lines"
+     ((numberoflines--))
+  done < xab
+EOF
+chmod 755 helper1.sh
+chmod 755 helper2.sh
+./helpder1.sh & ./helpder2.sh
+
+#Get all html of the sites to Level2HTML
+#echo -e "\nA exportar os $numberoflines resultados para Level2HTML"
+#while read -r line
+#  do
+#     curl -s "$line" >> Level2HTML
+#     echo "We need to process more $numberoflines lines"
+#     ((numberoflines--))
+#  done < UrlCleanListUniq
 
 #Export all emails to a flat file Mails
 echo -e '\nA extrair mails'

@@ -29,7 +29,7 @@ cd mailsearch <br />
 chmod 755 mailsearch.sh <br />
 ./mailsearch.sh
 
-Or... copy parte and be happy... <br />
+Or... copy & paste and be happy... <br />
 ---------------------------------------------------
 
 If you like it, star my repo and don't delete my email <br />

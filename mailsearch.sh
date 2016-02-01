@@ -2,20 +2,22 @@
 #######################################
 # josemedeirosdealmeida@gmail.com     #
 # josemedeirosdealmeida.com           #
-#A good help to find mails to SPAM    #
+# zectorpt                            #
 #                                     #
-#Usage:                               #
-# ./mailsearch.sh                     #
+# A good help to find mails to SPAM   #
+#                                     #
+# Usage:                              #
+#  ./mailsearch.sh                    #
 #######################################
 
-#Pede termo da pesquisa
+#Ask what to search
 if [[ $(echo $*) ]]; then
     searchterm="$*"
 else
     read -p "Search: " searchterm
 fi
 
-#Adiciona + entre as palavras and export to search file
+#Add a + between the strings
 searchterm=$(echo $searchterm | sed -e 's/\ /+/g')
 echo -e '\nExtraindo URLs\n'
 lynx -dump "http://www.google.co.uk/search?q=$searchterm&num=9999" > search

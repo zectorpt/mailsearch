@@ -17,8 +17,20 @@ If you want to improve it:
  2 - Choose How many levels of Links do you want download
  3 - Add more Search engines (the sintaxe change between Search Engines)
 
+----------------------------------------------------
 Usage:
+
+apt-get install git-all (debian based)
+OR
+yum install git-all (RedHat based)
+
+git clone https://github.com/zectorpt/mailsearch.git
+cd mailsearch
+chmod 755 mailsearch.sh
 ./mailsearch.sh
+
+Or... copy parte and be happy...
+---------------------------------------------------
 
 If you like it, star my repo or contact me
 josemedeirosdealmeida@gmail.com

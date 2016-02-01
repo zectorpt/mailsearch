@@ -20,16 +20,16 @@ If you want to improve it: <br />
 ----------------------------------------------------
 Usage:
 
-apt-get install git-all (debian based)
-OR
-yum install git-all (RedHat based)
+apt-get install git-all (debian based) <br />
+OR <br />
+yum install git-all (RedHat based)<br /><br />
 
-git clone https://github.com/zectorpt/mailsearch.git
-cd mailsearch
-chmod 755 mailsearch.sh
+git clone https://github.com/zectorpt/mailsearch.git <br />
+cd mailsearch <br />
+chmod 755 mailsearch.sh <br />
 ./mailsearch.sh
 
-Or... copy parte and be happy...
+Or... copy parte and be happy... <br />
 ---------------------------------------------------
 
 If you like it, star my repo and don't delete my email <br />

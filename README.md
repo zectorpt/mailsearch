@@ -12,7 +12,7 @@ Tested under Ubuntu 15.10
 Pre requirements:
 lynx curl awk
 
-If you want to improve it:
+If you want to improve it: <br />
  1 - Next step is to split the huge file (with split for example) that is downloaded and run parallel scripts to process it. <br />
  2 - Choose How many levels of Links do you want download <br />
  3 - Add more Search engines (the sintaxe change between Search Engines) <br />

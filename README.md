@@ -32,6 +32,6 @@ chmod 755 mailsearch.sh
 Or... copy parte and be happy...
 ---------------------------------------------------
 
-If you like it, star my repo or contact me
-josemedeirosdealmeida@gmail.com
+If you like it, star my repo and don't delete my email <br />
+josemedeirosdealmeida@gmail.com <br />
 josemedeirosdealmeida.com

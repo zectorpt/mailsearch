@@ -1,11 +1,11 @@
-# mailsearch
-This script use Google to download a list of URL's based on your search.
+# Mailsearch
+This script use Google, Bing and Yahoo to download a list of URL's based on your search.
 
 The script download all the HTML and grep it to a flat file. After this, process all the links in the HTML and generate a new output file (second level of links).
 
 If you need a lot of emails and don't want stay a lot of time browsing in boring sites... Use my script.
 
-A normal search could take about 2hr's (depending your connection)
+A normal search could take about 2hr's (depending your connection) and will download around 50MB.
 
 Tested under Ubuntu 15.10
 

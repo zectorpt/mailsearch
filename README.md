@@ -1,7 +1,7 @@
 # mailsearch
 This script use Google to download a list of URL's based on your search.
 
-The script download all the HTML and grep all to a flat file. After this, the script process all the links in the HTML and generate a new output file (second level of links)
+The script download all the HTML and grep it to a flat file. After this, process all the links in the HTML and generate a new output file (second level of links).
 
 If you need a lot of emails and don't want stay a lot of time browsing in boring sites... Use my script.
 
@@ -30,6 +30,7 @@ chmod 755 mailsearch.sh <br />
 ./mailsearch.sh
 
 Or... copy & paste and be happy... <br />
+
 ---------------------------------------------------
 
 If you like it, star my repo and don't delete my email <br />

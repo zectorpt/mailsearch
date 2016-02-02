@@ -19,10 +19,15 @@ fi
 
 #Add a + between the strings
 searchterm=$(echo $searchterm | sed -e 's/\ /+/g')
-echo -e '\nExtraindo URLs\n'
-lynx -dump "http://www.google.co.uk/search?q=$searchterm&num=9999" > search
+echo -e '\nExtracting from URLs from Google'
+lynx -dump "http://www.google.com/search?q=$searchterm&num=9999" > search
+echo -e '\nExtracting from URLs from Bing\n'
 sleep 1
-
+lynx -dump "http://www.bing.com/search?q=$searchterm&count=9999" >> search
+sleep 1
+echo -e 'Extracting from URLs from Yahoo\n'
+lynx -dump "http://search.yahoo.com/search?p=$searchterm&n=40" >> search
+sleep 1
 #grep the urls sorted and uniq to UrlCleanListUniq
 cat search | grep -Eo '(http|https)://[^/"]+' > UrlCleanList
 cat UrlCleanList |sort| uniq > UrlCleanListUniq
@@ -76,7 +81,8 @@ grep -E -o "\b[a-zA-Z0-9.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z0-9.-]+\b" Level2HTML > Mail
 sleep 1
 
 #Export the file Mails sorted and uniq to MailsFinalList
-cat Mails|sort|uniq > MailsFinalList
+echo "Search: $searchterm" > MailsFinalList
+cat Mails|sort|uniq >> MailsFinalList
 
 #Clean images from flat file
 echo -e "\nCleaning trash... png"
@@ -106,7 +112,25 @@ sleep 1
 awk '!/email./' MailsFinalList > temp && mv temp MailsFinalList
 sleep 1
 awk '!/.1/' MailsFinalList > temp && mv temp MailsFinalList
+sleep 1
+awk '!/bing/' MailsFinalList > temp && mv temp MailsFinalList
+sleep 1
+awk '!/tripadvisor/' MailsFinalList > temp && mv temp MailsFinalList
+sleep 1
+awk '!/yahoo/' MailsFinalList > temp && mv temp MailsFinalList
+sleep 1
+awk '!/booking.com/' MailsFinalList > temp && mv temp MailsFinalList
+sleep 1
+awk '!/amazonaws/' MailsFinalList > temp && mv temp MailsFinalList
+sleep 1
+awk '!/cloudfront/' MailsFinalList > temp && mv temp MailsFinalList
+sleep 1
+awk '!/doubleclick/' MailsFinalList > temp && mv temp MailsFinalList
+sleep 1
+awk '!/address.com/' MailsFinalList > temp && mv temp MailsFinalList
+sleep 1
+awk '!/site.com/' MailsFinalList > temp && mv temp MailsFinalList
 echo -e "\nDeleting temp files"
 sleep 1
-rm -f Mails Level2HTML UrlCleanListUniq UrlLevelTwo UrlLevelOne UrlCleanList search
+#rm -f Mails Level2HTML UrlCleanListUniq UrlLevelTwo UrlLevelOne UrlCleanList search
 echo -e "\nDONE! Check you MailsFinalList file\n"

@@ -1,4 +1,4 @@
-# Mailsearch
+# Mailsearch - The powerful mail catcher!
 This script use Google, Bing and Yahoo to download a list of URL's based on your search.
 
 The script download all the HTML and grep it to a flat file. After this, process all the links in the HTML and generate a new output file (second level of links).

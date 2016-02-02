@@ -94,7 +94,6 @@ awk '!/jpeg/' MailsFinalList > temp && mv temp MailsFinalList
 echo -e "\nCleaning trash... JPG"
 sleep 1
 awk '!/JPG/' MailsFinalList > temp && mv temp MailsFinalList
-echo -e "\nCleaning trash... JPG"
 sleep 1
 awk '!/webmaster/' MailsFinalList > temp && mv temp MailsFinalList
 sleep 1
@@ -107,9 +106,6 @@ sleep 1
 awk '!/email./' MailsFinalList > temp && mv temp MailsFinalList
 sleep 1
 awk '!/.1/' MailsFinalList > temp && mv temp MailsFinalList
-sleep 1
-
-
 echo -e "\nDeleting temp files"
 sleep 1
 rm -f Mails Level2HTML UrlCleanListUniq UrlLevelTwo UrlLevelOne UrlCleanList search

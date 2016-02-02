@@ -33,6 +33,6 @@ Or... copy & paste and be happy... <br />
 
 ---------------------------------------------------
 
-If you like it, star my repo and don't delete my email <br />
+If you like it, star my repo and don't delete my email from source code<br />
 josemedeirosdealmeida@gmail.com <br />
 josemedeirosdealmeida.com

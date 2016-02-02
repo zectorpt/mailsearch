@@ -20,7 +20,7 @@ If you want to improve it: <br />
 ----------------------------------------------------
 Usage:
 
-apt-get install git-all (debian based) <br />
+apt-get install git-all (Debian based) <br />
 OR <br />
 yum install git-all (RedHat based)<br /><br />
 

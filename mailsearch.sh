@@ -132,5 +132,5 @@ sleep 1
 awk '!/site.com/' MailsFinalList > temp && mv temp MailsFinalList
 echo -e "\nDeleting temp files"
 sleep 1
-#rm -f Mails Level2HTML UrlCleanListUniq UrlLevelTwo UrlLevelOne UrlCleanList search
+rm -f Mails Level2HTML UrlCleanListUniq UrlLevelTwo UrlLevelOne UrlCleanList search
 echo -e "\nDONE! Check you MailsFinalList file\n"
